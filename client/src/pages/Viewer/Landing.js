@@ -1,5 +1,5 @@
 import React from 'react';
-import PersistentDrawerLeft from './PersistentDrawerLeft';
+import PersistentDrawerLeft from '../common/components/PersistentDrawerLeft';
 
 export default function Landing() {
 

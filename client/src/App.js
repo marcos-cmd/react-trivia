@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 // import './App.css';
-import Landing from './pages/common/components/Landing';
+import Landing from './pages/Viewer/Landing';
 
 function App() {
   return (
