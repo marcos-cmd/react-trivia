@@ -158,7 +158,7 @@ export default function PersistentDrawerLeft() {
                 <Typography paragraph>
                     Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
                     facilisi etiam dignissim diam. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+                </Typography>
                 <SpacingGrid />
             </main>
         </div>

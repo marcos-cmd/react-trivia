@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
@@ -45,6 +45,26 @@ export default function RecipeReviewCard() {
         setExpanded(!expanded);
     };
 
+    const [items, setItems] = useState({
+        items: [
+            {
+                id: 0,
+                title: 'Timed Game',
+                subTitle: 'See how many questions you can answer correct against the clock!',
+            },
+            {
+                id: 1,
+                title: 'Endless Game',
+                subTitle: 'Correct answers = more points!!',
+            },
+            {
+                id: 2,
+                title: 'Leaderboards',
+                subTitle: 'Brag to your friends how knowledgable you are!',
+            }
+        ]
+    })
+
     return (
         <Card className={classes.root}>
             <CardHeader
@@ -58,7 +78,7 @@ export default function RecipeReviewCard() {
                 //         <MoreVertIcon />
                 //     </IconButton>
                 // }
-                title="Shrimp and Chorizo Paella"
+                title='item.title'
             // subheader="September 14, 2016"
             />
             <CardMedia
@@ -68,8 +88,7 @@ export default function RecipeReviewCard() {
             />
             <CardContent>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    This impressive paella is a perfect party dish and a fun meal to cook together with your
-                    guests. Add 1 cup of frozen peas along with the mussels, if you like.
+                    item . subtitle
                 </Typography>
             </CardContent>
             <CardActions disableSpacing>

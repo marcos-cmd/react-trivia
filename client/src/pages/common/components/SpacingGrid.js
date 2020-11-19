@@ -37,7 +37,6 @@ export default function SpacingGrid() {
                     <Card />
                 </Grid>
             </Grid>
-
         </Grid>
     );
 }
