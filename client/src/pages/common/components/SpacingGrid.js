@@ -1,7 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Card from './Card';
+import TimedCard from './TimedCard';
+import EndlessCard from './EndlessCard';
+import LeaderboardCard from './LeaderboardCard';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,13 +31,13 @@ export default function SpacingGrid() {
         <Grid container className={classes.root} spacing={2}>
             <Grid container justify="center" spacing={2}>
                 <Grid item xs={12} sm={6}>
-                    <Card />
+                    <TimedCard />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <Card />
+                    <EndlessCard />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <Card />
+                    <LeaderboardCard />
                 </Grid>
             </Grid>
         </Grid>
