@@ -12,12 +12,18 @@ import IconButton from '@material-ui/core/IconButton';
 import TuneIcon from '@material-ui/icons/Tune';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import HelpIcon from '@material-ui/icons/Help';
+import TimerIcon from '@material-ui/icons/Timer';
+import BarChartIcon from '@material-ui/icons/BarChart';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import CategoryIcon from '@material-ui/icons/Category';
 import SpacingGrid from './SpacingGrid';
+import QuestionSelect from './QuestionSelect';
+import CategorySelect from './CategorySelect';
+import DifficultySelect from './DifficultySelect';
+import TimerSelect from './TimerSelect';
 
 const drawerWidth = 240;
 
@@ -83,14 +89,6 @@ export default function PersistentDrawerLeft() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
-    // const handleDrawerOpen = () => {
-    //     setOpen(true);
-    // };
-
-    // const handleDrawerClose = () => {
-    //     setOpen(false);
-    // };
-
     const toggleDrawer = () => {
         if (open === true) {
             setOpen(false);
@@ -120,7 +118,7 @@ export default function PersistentDrawerLeft() {
                         <TuneIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap>
-                        Persistent drawer
+                        OPTIONS
                     </Typography>
                 </Toolbar>
             </AppBar>
@@ -140,22 +138,39 @@ export default function PersistentDrawerLeft() {
                 </div>
                 <Divider />
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
+                    <ListItem>
+                        <ListItemIcon>
+                            <HelpIcon color={'secondary'} />
+                        </ListItemIcon>
+                        <ListItemText primary={'Questions'} />
+                    </ListItem>
+                    <QuestionSelect />
+                    <Divider />
+                    <ListItem>
+                        <ListItemIcon>
+                            <CategoryIcon color={'secondary'} />
+                        </ListItemIcon>
+                        <ListItemText primary={'Category'} />
+                    </ListItem>
+                    <CategorySelect />
+                    <Divider />
+                    <ListItem>
+                        <ListItemIcon>
+                            <BarChartIcon color={'secondary'} />
+                        </ListItemIcon>
+                        <ListItemText primary={'Difficulty'} />
+                    </ListItem>
+                    <DifficultySelect />
+                    <Divider />
+                    <ListItem>
+                        <ListItemIcon>
+                            <TimerIcon color={'secondary'} />
+                        </ListItemIcon>
+                        <ListItemText primary={'Timer'} />
+                    </ListItem>
+                    <TimerSelect />
                 </List>
-                <Divider />
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
+
             </Drawer>
             <main
                 className={clsx(classes.content, {
@@ -165,8 +180,7 @@ export default function PersistentDrawerLeft() {
                 <div className={classes.drawerHeader} />
 
                 <Typography paragraph>
-                    Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-                    facilisi etiam dignissim diam. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
+                    Use the options menu to customize your game then begin playing by choosing a game-mode below!
                 </Typography>
                 <SpacingGrid />
             </main>
