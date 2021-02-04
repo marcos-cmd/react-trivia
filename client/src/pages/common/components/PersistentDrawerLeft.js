@@ -83,13 +83,22 @@ export default function PersistentDrawerLeft() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
 
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
+    // const handleDrawerOpen = () => {
+    //     setOpen(true);
+    // };
 
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
+    // const handleDrawerClose = () => {
+    //     setOpen(false);
+    // };
+
+    const toggleDrawer = () => {
+        if (open === true) {
+            setOpen(false);
+        }
+        else {
+            setOpen(true)
+        }
+    }
 
     return (
         <div className={classes.root}>
@@ -104,7 +113,7 @@ export default function PersistentDrawerLeft() {
                     <IconButton
                         color="inherit"
                         aria-label="open drawer"
-                        onClick={handleDrawerOpen}
+                        onClick={toggleDrawer}
                         edge="start"
                         className={clsx(classes.menuButton, open && classes.hide)}
                     >
@@ -125,7 +134,7 @@ export default function PersistentDrawerLeft() {
                 }}
             >
                 <div className={classes.drawerHeader}>
-                    <IconButton onClick={handleDrawerClose}>
+                    <IconButton onClick={toggleDrawer}>
                         {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
                 </div>
