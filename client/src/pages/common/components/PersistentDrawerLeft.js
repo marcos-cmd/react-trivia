@@ -19,7 +19,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import CategoryIcon from '@material-ui/icons/Category';
-import SpacingGrid from './SpacingGrid';
 import QuestionSelect from './QuestionSelect';
 import CategorySelect from './CategorySelect';
 import DifficultySelect from './DifficultySelect';
@@ -182,7 +181,7 @@ export default function PersistentDrawerLeft() {
                 <Typography paragraph>
                     Use the options menu to customize your game then begin playing by choosing a game-mode below!
                 </Typography>
-                <SpacingGrid />
+
             </main>
         </div>
     );
