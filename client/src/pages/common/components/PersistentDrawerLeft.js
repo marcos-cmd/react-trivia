@@ -9,20 +9,16 @@ import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
-import TuneIcon from '@material-ui/icons/Tune';
+import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import HelpIcon from '@material-ui/icons/Help';
-import TimerIcon from '@material-ui/icons/Timer';
-import BarChartIcon from '@material-ui/icons/BarChart';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@material-ui/icons/GitHub';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import CategoryIcon from '@material-ui/icons/Category';
-import QuestionSelect from './QuestionSelect';
-import CategorySelect from './CategorySelect';
-import DifficultySelect from './DifficultySelect';
-import TimerSelect from './TimerSelect';
+import Avatar from '@material-ui/core/Avatar';
 
 const drawerWidth = 240;
 
@@ -114,11 +110,9 @@ export default function PersistentDrawerLeft() {
                         edge="start"
                         className={clsx(classes.menuButton, open && classes.hide)}
                     >
-                        <TuneIcon />
+                        <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap>
-                        OPTIONS
-                    </Typography>
+                    
                 </Toolbar>
             </AppBar>
             <Drawer
@@ -135,39 +129,34 @@ export default function PersistentDrawerLeft() {
                         {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
                 </div>
-                <Divider />
+
+                {/* <Divider /> */}
+
                 <List>
                     <ListItem>
-                        <ListItemIcon>
-                            <HelpIcon color={'secondary'} />
-                        </ListItemIcon>
-                        <ListItemText primary={'Questions'} />
+                        <Avatar className={classes.large} alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
                     </ListItem>
-                    <QuestionSelect />
+                        <ListItem button component="a" href="https://www.linkedin.com/in/marcosjgarcia/" target="_blank" rel="noopener noreferrer" >
+                            <ListItemIcon>
+                                <LinkedInIcon color={'secondary'} />
+                            </ListItemIcon>
+                        <ListItemText primary='/marcosjgarcia'></ListItemText>
+
+                        </ ListItem>
+                    <Divider />
+                    <ListItem button component="a" href="https://github.com/marcos-cmd" target="_blank" rel="noopener noreferrer" >
+                        <ListItemIcon>
+                            <GitHubIcon color={'secondary'} />
+                        </ListItemIcon>
+                        <ListItemText primary={'marcos-cmd'} />
+                    </ListItem>
                     <Divider />
                     <ListItem>
                         <ListItemIcon>
                             <CategoryIcon color={'secondary'} />
                         </ListItemIcon>
-                        <ListItemText primary={'Category'} />
-                    </ListItem>
-                    <CategorySelect />
-                    <Divider />
-                    <ListItem>
-                        <ListItemIcon>
-                            <BarChartIcon color={'secondary'} />
-                        </ListItemIcon>
-                        <ListItemText primary={'Difficulty'} />
-                    </ListItem>
-                    <DifficultySelect />
-                    <Divider />
-                    <ListItem>
-                        <ListItemIcon>
-                            <TimerIcon color={'secondary'} />
-                        </ListItemIcon>
                         <ListItemText primary={'Timer'} />
                     </ListItem>
-                    <TimerSelect />
                 </List>
 
             </Drawer>
@@ -178,9 +167,6 @@ export default function PersistentDrawerLeft() {
             >
                 <div className={classes.drawerHeader} />
 
-                <Typography paragraph>
-                    Use the options menu to customize your game then begin playing by choosing a game-mode below!
-                </Typography>
 
             </main>
         </div>

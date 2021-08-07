@@ -1,6 +1,7 @@
 import React from 'react';
 import PersistentDrawerLeft from '../common/components/PersistentDrawerLeft';
 import SpacingGrid from '../common/components/SpacingGrid';
+import About from '../common/components/About';
 
 export default function Landing() {
 
@@ -8,6 +9,7 @@ export default function Landing() {
         <>
             <PersistentDrawerLeft />
             <SpacingGrid />
+            <About />
         </>
     );
 }

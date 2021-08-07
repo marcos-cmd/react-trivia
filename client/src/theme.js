@@ -5,15 +5,36 @@ import 'fontsource-roboto';
 const theme = createMuiTheme({
     palette: {
         primary: {
-            main: '#e0f2f1',
+            light: '#ffff5a',
+            main: '#ffff00',
+            dark: '#c7cc00',
+            contrastText: '#000000',
         },
-        secondary: {
-            main: '#009688',
-        },
+        
 
     },
     typography: {
-        font: 'roboto',
+        fontFamily: [
+            'Cardo',
+            'Oswald',
+            '-apple-system',
+            'BlinkMacSystemFont',
+            '"Segoe UI"',
+            'Roboto',
+            '"Helvetica Neue"',
+            'Arial',
+            'sans-serif',
+            '"Apple Color Emoji"',
+            '"Segoe UI Emoji"',
+            '"Segoe UI Symbol"',
+        ].join(','),
+        body1: {
+            fontFamily: "'Cardo', serif",
+        },
+        h1: {
+            fontFamily: "'Oswald', sans-serif",
+            textTransform: 'uppercase',
+        }
     },
 });
 
