@@ -6,7 +6,6 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -19,6 +18,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import CategoryIcon from '@material-ui/icons/Category';
 import Avatar from '@material-ui/core/Avatar';
+import Box from '@material-ui/core/Box';
 
 const drawerWidth = 240;
 
@@ -77,6 +77,10 @@ const useStyles = makeStyles((theme) => ({
         }),
         marginLeft: 0,
     },
+    large: {
+        width: theme.spacing(8),
+        height: theme.spacing(8),
+    },
 }));
 
 export default function PersistentDrawerLeft() {
@@ -134,7 +138,9 @@ export default function PersistentDrawerLeft() {
 
                 <List>
                     <ListItem>
-                        <Avatar className={classes.large} alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                        <Box m="auto" >
+                            <Avatar className={classes.large} alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                        </Box>
                     </ListItem>
                         <ListItem button component="a" href="https://www.linkedin.com/in/marcosjgarcia/" target="_blank" rel="noopener noreferrer" >
                             <ListItemIcon>

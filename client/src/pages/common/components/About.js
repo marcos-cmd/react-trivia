@@ -1,25 +1,29 @@
 import React from 'react';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
+import name from '../assets/name.svg';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        '& > *': {
-            margin: theme.spacing(1),
-            width: theme.spacing(16),
-            height: theme.spacing(16),
-        },
+const useStyles = makeStyles(theme => ({
+    title: {
+        color: '#000000',
     },
-}));
+    container: {
+        backgroundColor: theme.palette.primary,
+    },
+}))
 
-export default function SimplePaper() {
+export default function About() {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
-            <Paper elevation={0} />
-        </div>
+        <React.Fragment>
+            <CssBaseline />
+            <Container className={classes.container} maxWidth="sm" >
+                <Typography component="div"> Marcos J. Garcia </Typography>
+                <object type="image/svg+xml" data={name}>svg-animation</object>
+            </Container>
+        </React.Fragment>
     );
 }
